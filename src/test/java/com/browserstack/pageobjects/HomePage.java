@@ -1,5 +1,6 @@
 package com.browserstack.pageobjects;
 
+import com.browserstack.stepdefs.DriverManager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -8,13 +9,13 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import java.time.Duration;
 
 public class HomePage {
-    private WebDriver webDriver;
 
     private String selectedProductName;
+    private WebDriver driver;
 
-    public HomePage(WebDriver webDriver) {
-        this.webDriver = webDriver;
+    public HomePage() {
         this.selectedProductName = "";
+        this.driver = DriverManager.getDriver();
     }
 
     private By firstProductName = By.xpath("//*[@id=\"1\"]/p");
@@ -26,20 +27,20 @@ public class HomePage {
     private By productCartText = By.xpath("//*[@id=\"__next\"]/div/div/div[2]/div[2]/div[2]/div/div[3]/p[1]");
 
     public void selectFirstProductName() {
-        String firstProduct = webDriver.findElement(firstProductName).getText();
+        String firstProduct = driver.findElement(firstProductName).getText();
         setSelectedProductName(firstProduct);
     }
 
     public void clickAddToCartButton() {
-        webDriver.findElement(firstProductAddToCartButton).click();
+        driver.findElement(firstProductAddToCartButton).click();
     }
 
     public void waitForCartToOpen() {
-        new WebDriverWait(webDriver, Duration.ofSeconds(30)).until(ExpectedConditions.visibilityOfAllElementsLocatedBy(cartPane));
+        new WebDriverWait(driver, Duration.ofSeconds(30)).until(ExpectedConditions.visibilityOfAllElementsLocatedBy(cartPane));
     }
 
     public String getProductCartText() {
-        return webDriver.findElement(productCartText).getText();
+        return driver.findElement(productCartText).getText();
     }
 
     public void setSelectedProductName(String selectedProductName) {
