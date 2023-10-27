@@ -14,27 +14,15 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
-        <cucumber.version>6.9.1</cucumber.version>
+        <cucumber.version>7.4.1</cucumber.version>
         <testng.version>7.4.0</testng.version>
-        <selenium-java.version>3.141.59</selenium-java.version>
+        <selenium-java.version>4.1.4</selenium-java.version>
         <browserstack-local-java.version>1.0.6</browserstack-local-java.version>
         <json-simple.version>1.1.1</json-simple.version>
-        <slf4j.version>1.7.30</slf4j.version>
+        <browserstack-java-sdk.version>LATEST</browserstack-java-sdk.version>
     </properties>
 
-    <dependencies>
-
-        <dependency>
-            <groupId>org.slf4j</groupId>
-            <artifactId>slf4j-api</artifactId>
-            <version>${slf4j.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>org.slf4j</groupId>
-            <artifactId>slf4j-simple</artifactId>
-            <version>${slf4j.version}</version>
-        </dependency>
-
+    <!-- <dependencies>
         <dependency>
             <groupId>org.testng</groupId>
             <artifactId>testng</artifactId>
@@ -61,21 +49,239 @@
         </dependency>
         <dependency>
             <groupId>com.browserstack</groupId>
+            <artifactId>browserstack-java-sdk</artifactId>
+            <version>${browserstack-java-sdk.version}</version>
+            <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>io.qameta.allure</groupId>
+            <artifactId>allure-testng</artifactId>
+            <version>2.18.1</version>
+            <scope>test</scope>
+        </dependency>
+    </dependencies> -->
+
+    <dependencies>
+        		<dependency>
+			<groupId>org.seleniumhq.selenium</groupId>
+			<artifactId>selenium-java</artifactId>
+			<version>3.141.59</version>
+		</dependency>
+		<dependency>
+			<groupId>io.github.bonigarcia</groupId>
+			<artifactId>webdrivermanager</artifactId>
+			<version>5.5.0</version>
+		</dependency>
+		<dependency>
+			<groupId>com.jayway.jsonpath</groupId>
+			<artifactId>json-path</artifactId>
+			<version>2.7.0</version>
+		</dependency>
+		<dependency>
+			<groupId>org.testng</groupId>
+			<artifactId>testng</artifactId>
+			<version>7.4.0</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>io.cucumber</groupId>
+			<artifactId>cucumber-core</artifactId>
+			<version>5.6.0</version>
+		</dependency>
+		<dependency>
+			<groupId>io.cucumber</groupId>
+			<artifactId>cucumber-testng</artifactId>
+			<version>5.6.0</version>
+		</dependency>
+		<dependency>
+			<groupId>io.cucumber</groupId>
+			<artifactId>cucumber-java</artifactId>
+			<version>5.6.0</version>
+		</dependency>
+		<dependency>
+			<groupId>org.uncommons</groupId>
+			<artifactId>reportng</artifactId>
+			<version>1.1.4</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>velocity</groupId>
+			<artifactId>velocity-dep</artifactId>
+			<version>1.4</version>
+		</dependency>
+		<dependency>
+			<groupId>com.google.inject</groupId>
+			<artifactId>guice</artifactId>
+			<version>5.1.0</version>
+		</dependency>
+		<dependency>
+			<groupId>commons-io</groupId>
+			<artifactId>commons-io</artifactId>
+			<version>2.11.0</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.poi</groupId>
+			<artifactId>poi-ooxml</artifactId>
+			<version>5.2.3</version>
+		</dependency>
+		<dependency>
+			<groupId>io.rest-assured</groupId>
+			<artifactId>rest-assured</artifactId>
+			<version>5.2.0</version>
+		</dependency>
+		<dependency>
+			<groupId>com.googlecode.json-simple</groupId>
+			<artifactId>json-simple</artifactId>
+			<version>1.1.1</version>
+		</dependency>
+		<dependency>
+			<groupId>com.google.code.gson</groupId>
+			<artifactId>gson</artifactId>
+			<version>2.10</version>
+		</dependency>
+		<dependency>
+			<groupId>org.json</groupId>
+			<artifactId>json</artifactId>
+			<version>20220924</version>
+		</dependency>
+		<!-- <dependency>
+			<groupId>com.hp.lft</groupId>
+			<artifactId>sdk</artifactId>
+			<version>15.0.0</version>
+		</dependency>
+		<dependency>
+			<groupId>com.hp.lft</groupId>
+			<artifactId>report</artifactId>
+			<version>15.0.0</version>
+		</dependency>
+		<dependency>
+			<groupId>com.hp.lft</groupId>
+			<artifactId>unittesting</artifactId>
+			<version>15.0.0</version>
+		</dependency>
+		<dependency>
+			<groupId>com.hp.lft</groupId>
+			<artifactId>verifications</artifactId>
+			<version>15.0.0</version>
+		</dependency> -->
+		<dependency>
+			<groupId>com.oracle.database.jdbc</groupId>
+			<artifactId>ojdbc8</artifactId>
+			<version>21.7.0.0</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.logging.log4j</groupId>
+			<artifactId>log4j-core</artifactId>
+			<version>2.19.0</version>
+		</dependency>
+		<!-- <dependency>
+			<groupId>mailv1.0</groupId>
+			<artifactId>mailv1.0</artifactId>
+			<scope>system</scope>
+			<version>0.0.1-SNAPSHOT</version>
+			<systemPath>${basedir}\Lib\mailv1.0.jar</systemPath>
+		</dependency>
+		<dependency>
+			<groupId>DBReport</groupId>
+			<artifactId>DBReport</artifactId>
+			<scope>system</scope>
+			<version>0.0.1-SNAPSHOT</version>
+			<systemPath>${basedir}\Lib\DBReport.jar</systemPath>
+		</dependency> -->
+		<!-- <dependency>
+			<groupId>CucumberListener</groupId>
+			<artifactId>CucumberListener</artifactId>
+			<scope>system</scope>
+			<version>0.0.1-SNAPSHOT</version>
+			<systemPath>${basedir}\Lib\CucumberListenerv11.0.jar</systemPath>
+		</dependency> -->
+		<dependency>
+			<groupId>javax.mail</groupId>
+			<artifactId>mail</artifactId>
+			<version>1.4.7</version>
+		</dependency>
+		<dependency>
+			<groupId>org.jsoup</groupId>
+			<artifactId>jsoup</artifactId>
+			<version>1.15.3</version>
+		</dependency>
+		<dependency>
+			<groupId>commons-configuration</groupId>
+			<artifactId>commons-configuration</artifactId>
+			<version>1.10</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.commons</groupId>
+			<artifactId>commons-configuration2</artifactId>
+			<version>2.8.0</version>
+		</dependency>
+		<dependency>
+			<groupId>com.microsoft.sqlserver</groupId>
+			<artifactId>mssql-jdbc</artifactId>
+			<version>11.2.1.jre8</version>
+		</dependency>
+		<dependency>
+			<groupId>net.snowflake</groupId>
+			<artifactId>snowflake-jdbc</artifactId>
+			<version>3.13.25</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.tika</groupId>
+			<artifactId>tika-core</artifactId>
+			<version>2.6.0</version>
+		</dependency>
+		<dependency>
+			<groupId>javax.mail</groupId>
+			<artifactId>javax.mail-api</artifactId>
+			<version>1.6.2</version>
+		</dependency>
+		<dependency>
+			<groupId>com.sun.mail</groupId>
+			<artifactId>smtp</artifactId>
+			<version>2.0.1</version>
+		</dependency>
+		<dependency>
+			<groupId>com.sun.mail</groupId>
+			<artifactId>javax.mail</artifactId>
+			<version>1.6.2</version>
+		</dependency>
+		<dependency>
+			<groupId>com.opencsv</groupId>
+			<artifactId>opencsv</artifactId>
+			<version>5.7.1</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.commons</groupId>
+			<artifactId>commons-csv</artifactId>
+			<version>1.9.0</version>
+		</dependency>
+		<dependency>
+			<groupId>javax.xml.bind</groupId>
+			<artifactId>jaxb-api</artifactId>
+			<version>2.2.8</version>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>com.fasterxml.jackson.core</groupId>
+			<artifactId>jackson-databind</artifactId>
+			<version>2.14.0</version>
+		</dependency>
+		<dependency>
+			<groupId>net.java.dev.jna</groupId>
+			<artifactId>jna-platform</artifactId>
+			<version>5.12.1</version>
+		</dependency>
+		<dependency>
+            <groupId>com.browserstack</groupId>
             <artifactId>browserstack-local-java</artifactId>
-            <version>${browserstack-local-java.version}</version>
+            <version>1.0.6</version>
         </dependency>
-
-        <dependency>
-            <groupId>com.googlecode.json-simple</groupId>
-            <artifactId>json-simple</artifactId>
-            <version>${json-simple.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>org.apache.commons</groupId>
-            <artifactId>commons-lang3</artifactId>
-            <version>3.11</version>
-        </dependency>
-
+		<dependency>
+      		<groupId>com.browserstack</groupId>
+      		<artifactId>browserstack-java-sdk</artifactId>
+      		<version>LATEST</version>
+      		<scope>compile</scope>
+    	</dependency>
     </dependencies>
 
     <build>
@@ -89,14 +295,108 @@
                     <target>8</target>
                 </configuration>
             </plugin>
+            <plugin>
+                <artifactId>maven-dependency-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <id>getClasspathFilenames</id>
+                        <goals>
+                            <goal>properties</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+				<groupId>net.masterthought</groupId>
+				<artifactId>maven-cucumber-reporting</artifactId>
+				<version>3.15.0</version>
+				<executions>
+					<execution>
+						<id>execute</id>
+						<phase>${maven.cucumber.phase}</phase>
+						<goals>
+							<goal>generate</goal>
+						</goals>
+						<configuration>
+							<testFailureIgnore>true</testFailureIgnore>
+							<maven.test.failure.ignore>true</maven.test.failure.ignore>
+							<outputDirectory>target</outputDirectory>
+							<jsonFiles>
+								<param>${maven.cucumber.reportName}</param>
+							</jsonFiles>
+							<parallelTesting>true</parallelTesting>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-surefire-plugin</artifactId>
+                    <version>3.1.2</version>
+                    <configuration>
+                        <suiteXmlFiles>
+                            <suiteXmlFile>src/test/resources/testng.xml</suiteXmlFile>
+                        </suiteXmlFiles>
+                        <argLine>
+                            -javaagent:${com.browserstack:browserstack-java-sdk:jar}
+                        </argLine>
+                        <systemPropertyVariables>
+                            <cucumber.publish.quiet>true</cucumber.publish.quiet>
+                        </systemPropertyVariables>
+                    </configuration>
+            </plugin>
         </plugins>
     </build>
     <profiles>
         <profile>
-            <id>single</id>
-            <activation>
-                <activeByDefault>true</activeByDefault>
-            </activation>
+			<id>bs_myf5_test_sdk</id>
+			<properties>
+				<datatable.filename>MyF5_Test_Sanity.xlsx</datatable.filename>
+				<datatable.sheetname>MyF5_Sanity</datatable.sheetname>
+				<suite.xmlfile>src/test/resources/testng.xml</suite.xmlfile>
+				<skipTests>false</skipTests>
+				<maven.cucumber.reportName>/Users/kamalpreet/Documents/sample-forks/cucumber-java-browserstack/cucumber/MyF5Reg.json</maven.cucumber.reportName>
+				<maven.cucumber.phase>test</maven.cucumber.phase>
+			</properties>
+			<build>
+				<plugins>
+					<plugin>
+						<groupId>org.apache.maven.plugins</groupId>
+						<artifactId>maven-surefire-plugin</artifactId>
+						<version>3.0.0-M3</version>
+						<configuration>
+							<skipTests>${skipTests}</skipTests>
+							<argLine>-javaagent:"${com.browserstack:browserstack-java-sdk:jar}"</argLine>
+							<suiteXmlFiles>
+								<suiteXmlFile>${suite.xmlfile}</suiteXmlFile>
+							</suiteXmlFiles>
+<!--							<workingDirectory>target/</workingDirectory>-->
+							<testFailureIgnore>true</testFailureIgnore>
+							<systemPropertyVariables>
+								<!-- <profileId>${project.activeProfiles[0].id}</profileId> -->
+								<!-- <configs>${configs}</configs> -->
+                                <cucumber.publish.quiet>true</cucumber.publish.quiet>
+<!--                                <cucumber.features>src/test/resources/features/test</cucumber.features>-->
+							</systemPropertyVariables>
+						</configuration>
+					</plugin>
+					<plugin>
+						<artifactId>maven-dependency-plugin</artifactId>
+			        	<version>3.3.0</version>
+			        	<executions>
+			          		<execution>
+			            		<id>getClasspathFilenames</id>
+			            		<goals>
+			              			<goal>properties</goal>
+			            		</goals>
+			          		</execution>
+			        	</executions>
+			      	</plugin>
+				</plugins>
+			</build>
+		</profile>
+        <profile>
+            <id>sample-test</id>
             <build>
                 <plugins>
                     <plugin>
@@ -108,12 +408,11 @@
                                 <suiteXmlFile>src/test/resources/testng.xml</suiteXmlFile>
                             </suiteXmlFiles>
                             <argLine>
-                                -Ddataproviderthreadcount=1
+                                -javaagent:${com.browserstack:browserstack-java-sdk:jar}
                             </argLine>
                             <systemPropertyVariables>
-                                <caps>src/test/resources/conf/single.conf.json</caps>
                                 <cucumber.publish.quiet>true</cucumber.publish.quiet>
-                                <cucumber.features>src/test/resources/features/test</cucumber.features>
+<!--                                <cucumber.features>src/test/resources/features/test</cucumber.features>-->
                             </systemPropertyVariables>
                         </configuration>
                     </plugin>
@@ -121,7 +420,7 @@
             </build>
         </profile>
         <profile>
-            <id>parallel</id>
+            <id>sample-local-test</id>
             <build>
                 <plugins>
                     <plugin>
@@ -133,41 +432,9 @@
                                 <suiteXmlFile>src/test/resources/testng.xml</suiteXmlFile>
                             </suiteXmlFiles>
                             <argLine>
-                                -Ddataproviderthreadcount=4
+                                -javaagent:${com.browserstack:browserstack-java-sdk:jar}
                             </argLine>
                             <systemPropertyVariables>
-                                <caps>src/test/resources/conf/parallel.conf.json</caps>
-                                <cucumber.publish.quiet>true</cucumber.publish.quiet>
-                                <cucumber.features>src/test/resources/features/test</cucumber.features>
-                            </systemPropertyVariables>
-                            <properties>
-                                <property>
-                                    <name>parallel</name>
-                                    <value>methods</value>
-                                </property>
-                            </properties>
-                        </configuration>
-                    </plugin>
-                </plugins>
-            </build>
-        </profile>
-        <profile>
-            <id>local</id>
-            <build>
-                <plugins>
-                    <plugin>
-                        <groupId>org.apache.maven.plugins</groupId>
-                        <artifactId>maven-surefire-plugin</artifactId>
-                        <version>3.0.0-M5</version>
-                        <configuration>
-                            <suiteXmlFiles>
-                                <suiteXmlFile>src/test/resources/testng.xml</suiteXmlFile>
-                            </suiteXmlFiles>
-                            <argLine>
-                                -Ddataproviderthreadcount=1
-                            </argLine>
-                            <systemPropertyVariables>
-                                <caps>src/test/resources/conf/local.conf.json</caps>
                                 <cucumber.publish.quiet>true</cucumber.publish.quiet>
                                 <cucumber.features>src/test/resources/features/localtest</cucumber.features>
                             </systemPropertyVariables>

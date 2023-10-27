@@ -17,15 +17,23 @@ import io.cucumber.testng.PickleWrapper;
 import io.cucumber.testng.TestNGCucumberRunner;
 
 @CucumberOptions(
-        glue = "com.browserstack.stepdefs",
-        plugin = {
-                "pretty",
-                "html:reports/tests/cucumber/html",
-                "timeline:reports/tests/cucumber/timeline",
-                "junit:reports/tests/cucumber/junit/cucumber.xml",
-                "testng:reports/tests/cucumber/testng/cucumber.xml",
-                "json:reports/tests/cucumber/json/cucumber.json"
-        }
+        // glue = "com.browserstack.stepdefs",
+        // plugin = {
+        //         "pretty",
+        //         "html:reports/tests/cucumber/html",
+        //         "timeline:reports/tests/cucumber/timeline",
+        //         "junit:reports/tests/cucumber/junit/cucumber.xml",
+        //         "testng:reports/tests/cucumber/testng/cucumber.xml",
+        //         "json:reports/tests/cucumber/json/cucumber.json"
+        features="src/test/resources/features/test",
+		glue={"com.browserstack.stepdefs"},
+		plugin = {"pretty", 
+				"junit:cucumber-reports/Cucumber.xml",
+				"json:cucumber/MyF5Reg.json",
+				"html:cucumber/MyF5Reg.html"},
+//		tags= {"@MyF5_Sanity"},
+		strict=true,
+		monochrome = true
 )
 public class RunWebDriverCucumberTests {
 
@@ -47,7 +55,7 @@ public class RunWebDriverCucumberTests {
     }
 
     @Test(groups = "cucumber", description = "Runs Cucumber Feature", dataProvider = "scenarios")
-    public void feature(PickleWrapper pickleWrapper, FeatureWrapper featureWrapper, ManagedWebDriver managedWebDriver) {
+    public void feature(PickleWrapper pickleWrapper, FeatureWrapper featureWrapper, ManagedWebDriver managedWebDriver) throws Throwable {
         if(Utility.isLocal(managedWebDriver) && local==null){
             local = new Local();
             Utility.startLocal(local, managedWebDriver);

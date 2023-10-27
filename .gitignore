@@ -18,3 +18,9 @@ target/
 
 local.log
 reports
+.project
+.classpath
+bin/
+logs/
+cucumber/
+cucumber-reports/
