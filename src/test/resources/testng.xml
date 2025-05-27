@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="BDD Test Suite" verbose="1">
+<suite configfailurepolicy="continue" parallel="methods" data-provider-thread-count="1" name="My Suite" guice-stage="DEVELOPMENT" verbose="2">
     <test name="Cucumber Tests">
+        <parameter name="config" value="single.conf.json" />
         <classes>
             <class name="com.browserstack.RunWebDriverCucumberTests" />
         </classes>
